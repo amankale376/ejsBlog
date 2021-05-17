@@ -1,0 +1,17 @@
+<%- include('partials/header');-%>
+
+<% if(ejsPosts.length===0){%>
+    <h1>No Posts Made Yet!!</h1>
+<% }else{ %> 
+<% ejsPosts.forEach(element => { %>
+        <h1><%=element.pTitle  %> </h1>
+        <% let b =((element.pBody).substring(0,99))+"..."; %>
+             <%= b %><a href="/posts/<%= element.readMore %>">Read More</a>
+   
+<% }); }%> 
+
+
+
+
+
+<%- include('partials/footer');-%>
